@@ -10,7 +10,7 @@
 
 At [cloudy-org](https://github.com/cloudy-org), software is developed to be free **as in** freedom, transparent, efficient (and performant) and to **do exactly what the software is designed to do**. Nothing more, nothing less.
 
-Each project begins as something we want to develop for ourselves, whether it's to learn, to explore, or to create an improved alternative; whatever it is, here at cloudy-org it stars with **enthusiasm**, **curiosity** and **passion.**
+Each project begins as something we want to develop for ourselves, whether it's to learn, to explore, or to create an improved alternative — whatever it is, here at cloudy-org it starts with **enthusiasm**, **curiosity** and **passion.**
 
 ## The Wiki
 This wiki is your **user guide**! This static website is where you'll be able to access all our guides and application specific documentation. It contains everything from quick-start beginner-friendly guides to in-depth manuals for power-users.
