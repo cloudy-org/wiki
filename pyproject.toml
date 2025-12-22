@@ -1,0 +1,12 @@
+[project]
+name = "wiki"
+version = "0.1.0"
+description = "Cloudy-org's wiki site."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mkdocs==1.6.1",
+    "mkdocs-material==9.7.1",
+    "click==8.2.1", # hotreload fix: https://github.com/mkdocs/mkdocs/issues/4032
+    "mkdocs-section-index==0.3.10",
+]

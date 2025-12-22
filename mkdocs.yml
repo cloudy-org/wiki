@@ -1,0 +1,43 @@
+site_name: The Cloudy Wiki
+
+repo_url: https://github.com/cloudy-org
+repo_name: cloudy-org
+edit_uri: wiki/edit/main/docs/
+
+plugins:
+  - search
+  - section-index
+
+theme:
+  name: material
+  logo: assets/clouds.png
+  favicon: assets/clouds.png
+  icon:
+    repo: octicons/git-merge-16
+  font:
+    text: Roboto Mono
+  palette:
+    scheme: slate
+    primary: red
+    accent: red
+  features:
+    - content.action.edit
+    - search.suggest
+    - toc.follow
+    - content.code.annotation
+    - content.code.copy
+
+site_author: cloudy-org
+copyright: Copyright &copy; 2025 Goldy
+
+extra:
+  generator: false
+  social:
+    - icon: octicons/git-merge-16
+      link: https://github.com/cloudy-org
+
+extra_css:
+  - css/extra.css
+
+watch:
+  - docs
