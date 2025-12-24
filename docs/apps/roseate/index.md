@@ -13,7 +13,7 @@ It's designed to be **lightweight**, **privacy-respecting** and **stupidly fast*
 ![placeholder image]()
 
 ## Background
-Roseate has been a passion project for [me](https://devgoldy.xyz) to learn the 🦀 Rust programming language, while also laying the groundwork for shared infrastructure across cloudy-org (like the [cirrus](https://github.com/cloudy-org/cirrus) tool-kit).
+Roseate has been a passion project for [me](https://devgoldy.xyz) to learn the 🦀 Rust programming language, while also laying the groundwork for shared infrastructure across cloudy-org (like the [cirrus](https://github.com/cloudy-org/cirrus) tool-kit). Roseate actually begun as a [tauri](https://tauri.app/) web app but I wasn't happy with the memory usage and performance. Hence I switched to [Egui](https://github.com/emilk/egui) which currently runs natively via OpenGL, and ever since it's been pretty performant. Along the way, the switch has also been a great learning experience.
 
 ## How to use?
 !!! info
@@ -34,10 +34,26 @@ roseate
 
 ![application launcher](./application_launcher.png)
 
-3) Or by clicking an image.
+3) Or by normally opening an image.
 
 ![launch with image](./launch_with_image.png)
 
-<br>
+### Opening an image
+You can open an image in **2** primary ways:
 
+1) Clicking on the **Open Image** button or the 🌹 **rose**, then selecting an image.
+
+![open image button](./open_image.gif)
+![select image button](./select_image.gif){: style="height:350px"}
+
+2) Opening an image in your file explorer (as hinted previously).
+
+3) Or by dragging and dropping into the viewer.
+
+!!! failure
+    Drag and dropping files currently doesn't work on Linux **with Wayland** yet.
+
+![placeholder image]()
+
+<br>
 ***THIS WIKI IS STILL WIP...***
