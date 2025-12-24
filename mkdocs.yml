@@ -8,6 +8,11 @@ plugins:
   - search
   - section-index
 
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
 theme:
   name: material
   logo: assets/clouds.png
@@ -15,7 +20,7 @@ theme:
   icon:
     repo: octicons/git-merge-16
   font:
-    text: Roboto Mono
+    text: Roboto
   palette:
     scheme: slate
     primary: red
