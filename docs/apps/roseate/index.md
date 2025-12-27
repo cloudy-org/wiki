@@ -44,7 +44,7 @@ You can open an image in **2** primary ways:
 1) Clicking on the **Open Image** button or the 🌹 **rose**, then selecting an image.
 
 ![open image button](./open_image.gif)
-![select image button](./select_image.gif){: style="height:350px"}
+![select image button](./select_image.gif){: style="width:400px"}
 
 2) Opening an image in your file explorer (as hinted previously).
 
