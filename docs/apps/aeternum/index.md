@@ -48,19 +48,19 @@ You can either install it for all users or only for yourself.
 - **Wait.**
 The installer will now extract all important files for aeternum to work, in the directory what you specified in [step 4](#win-installer.4).
 
-6. **Done.**
+- **Done.**
 Aeternum has finished installing and now can be used.
 
 ##### Portable
 Start of by downloading the latest [aeternum-x86_64-pc-windows-msvc.zip](https://github.com/cloudy-org/aeternum/releases/download/latest/aeternum-x86_64-pc-windows-msvc.zip).
 
-1. **Extract the contents.**
+- **Extract the contents.**
 This can be done with the normal windows explorer (or any other third party zip program like [7-zip](https://7-zip.org/)).
 
-2. **Open the folder.**
+- **Open the folder.**
 Open the folder with the extracted contents.
 
-3. **Run.**
+- **Run.**
 Now you can open aeternum via the `aeternum.exe`.
 
 !!! info
@@ -99,16 +99,16 @@ yay -Sy aeternum
 ##### Portable
 Start of by downloading the latest [aeternum-x86_64-unknown-linux-gnu.tar.gz](https://github.com/cloudy-org/aeternum/releases/download/v0.1.2-beta.1/aeternum-x86_64-unknown-linux-gnu.tar.gz).
 
-1. **Extract the contents.**
+- **Extract the contents.**
 You can either use your file manager or your terminal with the command:
 ```sh title="Terminal"
 tar -xf aeternum-x86_64-unknown-linux-gnu.tar.gz
 ```
 
-2. **Open the folder.**
+- **Open the folder.**
 You can either `cd` into it or open it with your file manager.
 
-3. **Run.**
+- **Run.**
 Now you can double click on `aeternum` or run it via your terminal with:
 ```sh title="Terminal"
 ./aeternum
