@@ -1,6 +1,6 @@
 # Index
 
-## Welcome to the Cloudy-org Wiki.
+## Welcome to the Cloudy-Org Wiki.
 
 <div align="center">
 
