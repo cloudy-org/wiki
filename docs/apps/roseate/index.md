@@ -26,9 +26,17 @@ Roseate can be launched in **3** primary ways, [if setup correctly](./setup.md):
 
 1) Your terminal, by executing the binary.
 
-```sh title="terminal"
-roseate
-```
+=== "Linux"
+
+    ```sh title="terminal"
+    roseate
+    ```
+
+=== "Windows"
+
+    ```cmd title="terminal"
+    start roseate
+    ```
 
 2) Through your application launcher (or start menu).
 
@@ -48,12 +56,26 @@ You can open an image in **2** primary ways:
 
 2) Opening an image in your file explorer (as hinted previously).
 
-3) Or by dragging and dropping into the viewer.
+3) By dragging and dropping into the viewer.
 
 !!! failure
     Drag and dropping files currently doesn't work on Linux **with Wayland** yet.
 
 ![placeholder image]()
+
+4) Or via your terminal once again.
+
+=== "Linux"
+
+    ```sh title="terminal"
+    roseate ./flowers.png
+    ```
+
+=== "Windows"
+
+    ```sh title="terminal"
+    start roseate ./flowers.png
+    ```
 
 <br>
 ***THIS WIKI IS STILL WIP...***

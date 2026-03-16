@@ -9,11 +9,18 @@ plugins:
   - section-index
 
 markdown_extensions:
+  - toc:
+      permalink: true
   - admonition
   - pymdownx.details
   - pymdownx.superfences
   - attr_list
   - md_in_html
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
 
 theme:
   name: material
@@ -34,6 +41,7 @@ theme:
     - toc.follow
     - content.code.annotation
     - content.code.copy
+    - content.tabs.link
 
 site_author: cloudy-org
 copyright: Copyright &copy; 2025 Goldy
