@@ -11,6 +11,7 @@ plugins:
 markdown_extensions:
   - toc:
       permalink: true
+  - footnotes
   - admonition
   - pymdownx.details
   - pymdownx.superfences
@@ -42,9 +43,10 @@ theme:
     - content.code.annotation
     - content.code.copy
     - content.tabs.link
+    - content.footnote.tooltips
 
 site_author: cloudy-org
-copyright: Copyright &copy; 2025 Goldy
+copyright: Copyright &copy; 2025 - 2026 Goldy
 
 extra:
   generator: false
