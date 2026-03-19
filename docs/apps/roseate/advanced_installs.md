@@ -13,7 +13,7 @@ Roseate slim is the lean and basic version of Roseate that excludes all the addi
 
 > As of **`0.1.0-alpha.20`** in **19/03/2026**.
 
-This is a comparison of the two types compiled for **Linux** in **release mode**. The Roseate Linux binary is actually the **biggest binary** ever, so this is the worse case scenario platform-wise.
+This is a comparison of the two types compiled for **Linux** in **release mode**. The Roseate Linux binary is actually the **biggest binary** ever, so this is the worse case scenario platform-wise (e.g: the **default** Windows binary is `17 MB`).
 
 > As development proceeds I expect the size to increase gradually, specifically the **Default** type. My goal is to keep our dependency on third-party rust crates as small as possible going forward, I may even replace some libraries with my own but my priority is to get rid of as many as I can. Naturally this means the binary size should also stay pretty consistent or hopefully even shrink. **~ [Goldy][goldy_site]**
 
