@@ -13,7 +13,9 @@ It's designed to be **lightweight**, **privacy-respecting** and **stupidly fast*
 ![placeholder image]()
 
 ## Background
-Roseate has been a passion project for [me](https://devgoldy.xyz) to learn the 🦀 Rust programming language, while also laying the groundwork for shared infrastructure across cloudy-org (like the [cirrus](https://github.com/cloudy-org/cirrus) tool-kit). Roseate actually begun as a [tauri](https://tauri.app/) web app but I wasn't happy with the memory usage and performance. Hence I switched to [Egui](https://github.com/emilk/egui) which currently runs natively via OpenGL, and ever since it's been pretty performant. Along the way, the switch has also been a great learning experience.
+> Roseate has been a passion project for [me][goldy_site] to learn the 🦀 Rust programming language, while also laying the groundwork for shared infrastructure across cloudy-org (like the [cirrus](https://github.com/cloudy-org/cirrus) tool-kit). Roseate actually begun as a [tauri](https://tauri.app/) web app but I wasn't happy with the memory usage and performance. Hence I switched to [Egui](https://github.com/emilk/egui) which currently runs natively via OpenGL, and ever since it's been pretty performant. Along the way, the switch has also been a great learning experience.
+> 
+> **~ [Goldy][goldy_site]**
 
 ## How to use?
 !!! info
@@ -79,3 +81,5 @@ You can open an image in **2** primary ways:
 
 <br>
 ***THIS WIKI IS STILL WIP...***
+
+[goldy_site]: https://devgoldy.xyz
