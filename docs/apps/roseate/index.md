@@ -2,7 +2,7 @@
 ![showcase image](./showcase_1.png)
 
 !!! warning
-    If you're looking for an [installation guide](./installation.md), there isn't one at the moment because Roseate is still <ins>**work in progress**</ins> and has not released yet.
+    If you're looking for an [Installation Guide](./installation.md), there isn't one at the moment because Roseate is still <ins>**work in progress**</ins> and has not released yet.
 
 > Roseate is a **free** and **open-source**, GPU accelerated, cross-platform and simplistic image viewer that's highly configurable and fast.
 
@@ -17,69 +17,10 @@ It's designed to be **lightweight**, **privacy-respecting** and **stupidly fast*
 > 
 > **~ [Goldy][goldy_site]**
 
-## How to use?
-!!! info
-    At the moment this wiki assumes you're on Linux, support for other platforms (Windows & MacOS) is work in progress and half-baked. If you're on these platforms and you're happy to help, we'll be very grateful if you can compile the image viewer and [report your issues to us](https://github.com/cloudy-org/roseate/issues). Additionally edits to [this wiki](https://github.com/cloudy-org/wiki/edit/main/docs/apps/roseate/index.md) would be great.
+## Index
 
-Welcome to this quick guide on how to use the Roseate image viewer. **It's simple!**
-
-### Launching the image viewer
-Roseate can be launched in **3** primary ways, [if setup correctly](./setup.md):
-
-1) Your terminal, by executing the binary.
-
-=== "Linux"
-
-    ```sh title="terminal"
-    roseate
-    ```
-
-=== "Windows"
-
-    ```cmd title="terminal"
-    start roseate
-    ```
-
-2) Through your application launcher (or start menu).
-
-![application launcher](./application_launcher.png)
-
-3) Or by normally opening an image.
-
-![launch with image](./launch_with_image.png)
-
-### Opening an image
-You can open an image in **2** primary ways:
-
-1) Clicking on the **Open Image** button or the 🌹 **rose**, then selecting an image.
-
-![open image button](./open_image.gif)
-![select image button](./select_image.gif){: style="width:400px"}
-
-2) Opening an image in your file explorer (as hinted previously).
-
-3) By dragging and dropping into the viewer.
-
-!!! failure
-    Drag and dropping files currently doesn't work on Linux **with Wayland** yet.
-
-![placeholder image]()
-
-4) Or via your terminal once again.
-
-=== "Linux"
-
-    ```sh title="terminal"
-    roseate ./flowers.png
-    ```
-
-=== "Windows"
-
-    ```sh title="terminal"
-    start roseate ./flowers.png
-    ```
-
-<br>
-***THIS WIKI IS STILL WIP...***
+- [How to use?](./how_to_use.md) - Quick guide on how to use Roseate.
+- [Installation](./installation.md) - A straightforward and beginner friendly installation guide.
+- [Advanced Installations](./advanced_installs.md) - An in-depth installation guide for **advanced users**.
 
 [goldy_site]: https://devgoldy.xyz
