@@ -576,7 +576,9 @@ wheels = [
 name = "wiki"
 version = "0.1.0"
 source = { virtual = "." }
-dependencies = [
+
+[package.dev-dependencies]
+dev = [
     { name = "click" },
     { name = "mkdocs" },
     { name = "mkdocs-material" },
@@ -584,7 +586,9 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [
+
+[package.metadata.requires-dev]
+dev = [
     { name = "click", specifier = "==8.2.1" },
     { name = "mkdocs", specifier = "==1.6.1" },
     { name = "mkdocs-material", specifier = "==9.7.1" },
