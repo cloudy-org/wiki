@@ -62,8 +62,8 @@ roseate
 ### Display Server Specific (X11 / Wayland)
 
 !!! note
-    The binary size reductions here are nothing to really brag about, nor are they beneficial.
-    This feature flag exists mostly as an example for future flags. 
+    The binary size reductions here are nothing to really brag about, unless you're chaining 
+    it with other feature flags. This feature flag exists mostly as an example for future flags.
 
 Oh...? what's that, you don't want to compile both Wayland and X11 dependencies?
 
