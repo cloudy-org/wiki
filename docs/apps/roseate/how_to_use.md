@@ -5,7 +5,7 @@
 !!! info
     At the moment this wiki assumes you're on Linux, support for other platforms (Windows & MacOS) is work in progress and half-baked. If you're on these platforms and you're happy to help, we'll be very grateful if you can compile the image viewer and [report your issues to us](https://github.com/cloudy-org/roseate/issues). Additionally edits to [this wiki](https://github.com/cloudy-org/wiki/edit/main/docs/apps/roseate/index.md) would be great.
 
-Welcome to this quick guide on how to use the Roseate image viewer. **It's simple!**
+Welcome to this quick guide on how to use the [Roseate](./index.md) image viewer. **It's simple!**
 
 ## Launching the image viewer.
 Roseate can be launched in **3** primary ways, [if setup correctly](./setup.md):

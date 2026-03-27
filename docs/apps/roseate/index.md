@@ -10,7 +10,10 @@ Being a cloudy-org application, it naturally follows the [Cloudy Philosophy](htt
 
 It's designed to be **lightweight**, **privacy-respecting** and **stupidly fast** to launch and display images.
 
-![placeholder image]()
+![gif to be added here]()
+
+## Source Code
+Under the **GNU GPL-3.0** license: **[https://github.com/cloudy-org/roseate](https://github.com/cloudy-org/roseate)**
 
 ## Background
 > Roseate has been a passion project for [me][goldy_site] to learn the 🦀 Rust programming language, while also laying the groundwork for shared infrastructure across cloudy-org (like the [cirrus](https://github.com/cloudy-org/cirrus) tool-kit). Roseate actually begun as a [tauri](https://tauri.app/) web app but I wasn't happy with the memory usage and performance. Hence I switched to [Egui](https://github.com/emilk/egui) which currently runs natively via OpenGL, and ever since it's been pretty performant. Along the way, the switch has also been a great learning experience.

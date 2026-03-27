@@ -6,7 +6,7 @@
     This is the advanced installation guide. If you're new you'll want the **[Installation Guide](./installation.md)** instead.
 
 ## Roseate Slim (aka basic)
-Roseate slim is the lean and basic version of Roseate that excludes all the additional features such as the image exif location button and less common file formats.
+Roseate slim is the lean and basic version of [Roseate](./index.md) that excludes all the additional features such as the image exif location button and less common file formats.
 
 | Type | Binary Size | Rust Crates |
 | ---- | ---- | ----------- |
