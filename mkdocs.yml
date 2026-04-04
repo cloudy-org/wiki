@@ -12,7 +12,7 @@ plugins:
   - wiki-app-docs-gen:
       apps:
         roseate:
-          git-url: "https://github.com/cloudy-org/roseate"
+          git-tag: "cloudy-org/roseate @ gh"
           assets-path: "app/assets/"
 
 markdown_extensions:

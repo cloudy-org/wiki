@@ -1,13 +1,14 @@
-import ctypes
 import typing
-import logging
+from typing import Optional
 
+import logging
 from pathlib import Path
 from mkdocs.plugins import BasePlugin
 from mkdocs.structure.pages import Page
 from mkdocs.structure.files import Files
 from mkdocs.config import config_options
 from mkdocs.config.defaults import MkDocsConfig
+from importlib.util import spec_from_file_location, module_from_spec
 
 __all__ = (
     "AppDocsGenerator",
@@ -18,7 +19,7 @@ logger = logging.getLogger(__name__)
 AppConfigData = typing.TypedDict(
     "AppConfigData",
     {
-        "git-url": str,
+        "git-tag": str,
         "assets-path": str
     }
 )
@@ -41,33 +42,39 @@ class AppDocsGenerator(BasePlugin):
         app_config = apps.get(app_name)
 
         if app_config is not None:
-            git_url = app_config.get("git_url")
-            assets_path = app_config.get("assets_path")
+            git_tag = app_config.get("git-tag")
+            assets_path = app_config.get("assets-path")
+
+            if git_tag is None or assets_path is None:
+                raise KeyError(
+                    "Both 'git-tag' and 'assets-path' keys must be set for 'wiki-app-docs-gen'!"
+                )
 
             app_config_section = find_config_template_and_generate_markdown(
-                git_url, assets_path
+                git_tag, assets_path
             )
 
             markdown = markdown.replace(
-                "{wiki-app-config-section}",
-                app_config_section
+                "{wiki-app-config-section}", app_config_section
             )
 
         return markdown
 
-def find_config_template_and_generate_markdown(git_url: str, assets_path: str) -> str:
-    # shared_object_path = Path("./target/release/libwiki.so")
+def find_config_template_and_generate_markdown(git_repo_tag: str, assets_path: str) -> Optional[str]:
+    shared_object_path = Path("./target/release/libwiki.so")
 
-    # wiki_shared_lib = ctypes.CDLL(str(shared_object_path.absolute()))
+    shared_lib_spec = spec_from_file_location("wiki", shared_object_path)
+    shared_lib_module = module_from_spec(shared_lib_spec)
 
-    # wiki_shared_lib.add.argtypes = [ctypes.c_int, ctypes.c_int]
-    # wiki_shared_lib.add.restype = ctypes.c_int
-
-    # print(wiki_shared_lib.add(5, 6))
+    # sys.modules["wiki"] = shared_lib_module
+    shared_lib_spec.loader.exec_module(shared_lib_module)
 
     # TODO: find config.template.toml file, parse it 
     # and generate markdown all on the rust side then 
     # return the string here.
-    app_config_section = "*generated config will go here...*"
+    app_config_section: Optional[str] = shared_lib_module.find_config_template_and_generate_markdown(
+        git_repo_tag,
+        assets_path
+    )
 
     return app_config_section
