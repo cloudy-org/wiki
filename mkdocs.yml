@@ -20,17 +20,17 @@ markdown_extensions:
       permalink: true
   - footnotes
   - admonition
-  - pymdownx.details
-  - pymdownx.superfences
   - attr_list
   - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
   - pymdownx.snippets:
-      base_path: ["snippets"]
+      base_path: ["snippets", "snippets/generated"]
       check_paths: true 
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji

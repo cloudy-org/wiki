@@ -2,4 +2,4 @@
 
 --8<-- "wip-page.md"
 
-{wiki-app-config-section}
+--8<-- "roseate-config-gen.md"

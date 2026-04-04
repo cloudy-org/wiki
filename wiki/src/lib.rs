@@ -32,11 +32,33 @@ fn find_config_template_and_generate_markdown<'a>(git_repo_tag: String, assets_p
 
             let mut markdown_source_code = String::new();
 
-            markdown_source_code.push_str("*generated config will go here... meow*");
+            // TODO: change 'template.keys' to be ordered
+            if let Some(keys) = template.keys {
+                for (key_name, template_key) in keys {
+                    markdown_source_code.push_str(
+                        &format!("\n## `{}`\n", key_name)
+                    );
 
-            Ok(
-                markdown_source_code
-            )
+                    markdown_source_code.push_str(
+                        &format!(
+                            "\n**Default Value:**\n\n```toml\n{}\n```\n",
+                            template_key.defined_toml_value
+                        )
+                    );
+
+                    markdown_source_code.push_str(
+                        &format!(
+                            "\n**Description:**\n\n{}\n",
+                            match template_key.docstring.description.long {
+                                Some(description) => description,
+                                None => "No description.".into(),
+                            }
+                        )
+                    )
+                }
+            }
+
+            Ok(markdown_source_code)
         },
         Err(error) => {
             Err(
