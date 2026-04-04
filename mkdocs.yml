@@ -8,6 +8,13 @@ plugins:
   - search
   - section-index
 
+  # Our custom plugins
+  - wiki-app-docs-gen:
+      apps:
+        roseate:
+          git-url: "https://github.com/cloudy-org/roseate"
+          assets-path: "app/assets/"
+
 markdown_extensions:
   - toc:
       permalink: true
