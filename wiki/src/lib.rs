@@ -1,4 +1,5 @@
 use cirrus_config::v1::template::Template;
+use cirrus_git_tag::{GitTag, platform::Platform};
 
 use reqwest::Url;
 use pyo3::{exceptions::PyRuntimeError, prelude::*};
@@ -16,7 +17,7 @@ fn wiki(module: &Bound<'_, PyModule>) -> PyResult<()> {
 fn find_config_template_and_generate_markdown<'a>(git_repo_tag: String, assets_path_string: String) -> PyResult<String> {
     // TODO: handle results
 
-    match parse_git_repo_tag_to_raw_url(git_repo_tag.clone()) {
+    match parse_git_repo_tag_to_raw_url(git_repo_tag) {
         Ok(raw_url) => {
             let template_config_url = Url::parse(&raw_url).unwrap()
                 .join(&assets_path_string).unwrap()
@@ -71,34 +72,27 @@ fn find_config_template_and_generate_markdown<'a>(git_repo_tag: String, assets_p
     }
 }
 
-fn parse_git_repo_tag_to_raw_url(git_repo_tag: String) -> Result<String, String> {
+fn parse_git_repo_tag_to_raw_url(git_repo_tag_string: String) -> Result<String, String> {
     // TODO: switch to error struct
 
-    let repo_and_platform: Vec<&str> = git_repo_tag.split("@")
-        .map(|tag_part| tag_part.trim())
-        .collect();
+    let git_tag = GitTag::parse_string(git_repo_tag_string)
+        .map_err(|error| error.to_string())?;
 
-    let mut repo_and_platform_iter = repo_and_platform.into_iter();
-
-    match repo_and_platform_iter.next() {
-        Some(user_and_repo) => {
-            let platform = repo_and_platform_iter.next();
-
-            match platform {
-                Some("gh") => {
-                    Ok(
-                        format!(
-                            "https://raw.githubusercontent.com/{}/refs/heads/main/", user_and_repo
-                        )
+    match git_tag.repo {
+        Some(repo) => {
+            match git_tag.platform {
+                Platform::GitHub => Ok(
+                    format!(
+                        "https://raw.githubusercontent.com/{}/{}/refs/heads/main/",
+                        git_tag.owner,
+                        repo
                     )
-                },
+                ),
                 _ => Err(
                     "Could not find supported git platform tag (only '@ gh' is supported at the moment)!".into()
                 ),
             }
         },
-        None => Err(
-            format!("Failed to parse git repo tag for user and repo. Git repo tag: {git_repo_tag}")
-        ),
+        None => Err("No repository was found in the git tag!".into()),
     }
 }

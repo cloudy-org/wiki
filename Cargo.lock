@@ -101,6 +101,10 @@ name = "cirrus_error"
 version = "0.1.0"
 
 [[package]]
+name = "cirrus_git_tag"
+version = "0.1.0"
+
+[[package]]
 name = "cirrus_path"
 version = "0.1.0"
 dependencies = [
@@ -1626,6 +1630,7 @@ name = "wiki"
 version = "0.1.0"
 dependencies = [
  "cirrus_config",
+ "cirrus_git_tag",
  "pyo3",
  "reqwest",
 ]
