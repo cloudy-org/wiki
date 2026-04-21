@@ -60,7 +60,7 @@ def find_config_template_and_generate_markdown(git_repo_tag: str, assets_path: s
     shared_object_path = Path("./target/release/libwiki.so")
 
     if not shared_object_path.exists():
-        return "The libwiki.so (rust wiki crate) library is required to be compiled to generate this page!"
+        return "*The libwiki.so (rust wiki crate) library is required to be compiled to generate this page!*"
 
     shared_lib_spec = spec_from_file_location("wiki", shared_object_path)
     shared_lib_module = module_from_spec(shared_lib_spec)
