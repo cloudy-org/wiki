@@ -8,8 +8,8 @@ name = "wiki"
 crate-type = ["cdylib"]
 
 [dependencies]
-cirrus_config = { path = "../cirrus/config" }
+cirrus_config = { path = "../cirrus/config/v1" }
 cirrus_git_tag = { path = "../cirrus/git_tag/v1" }
 
-reqwest = { version = "0.13.2", features = ["blocking"] }
 pyo3 = { version = "0.28.3", features = ["abi3-py312"] }
+reqwest = { version = "0.13.2", features = ["blocking"] }

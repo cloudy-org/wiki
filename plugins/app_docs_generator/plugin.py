@@ -1,17 +1,16 @@
 import typing
 
-import logging
 from pathlib import Path
-from mkdocs.plugins import BasePlugin
 from mkdocs.config import config_options
 from mkdocs.config.defaults import MkDocsConfig
+from mkdocs.plugins import BasePlugin, get_plugin_logger
 from importlib.util import spec_from_file_location, module_from_spec
 
 __all__ = (
     "AppDocsGenerator",
 )
 
-logger = logging.getLogger(__name__)
+logger = get_plugin_logger(__name__)
 
 AppConfigData = typing.TypedDict(
     "AppConfigData",
@@ -60,6 +59,10 @@ def find_config_template_and_generate_markdown(git_repo_tag: str, assets_path: s
     shared_object_path = Path("./target/release/libwiki.so")
 
     if not shared_object_path.exists():
+        logger.warning(
+            f"Skipping generating '{git_repo_tag}' configuration pages because libwiki.so has not been compiled..."
+        )
+
         return "*The libwiki.so (rust wiki crate) library is required to be compiled to generate this page!*"
 
     shared_lib_spec = spec_from_file_location("wiki", shared_object_path)
@@ -68,12 +71,20 @@ def find_config_template_and_generate_markdown(git_repo_tag: str, assets_path: s
     # sys.modules["wiki"] = shared_lib_module
     shared_lib_spec.loader.exec_module(shared_lib_module)
 
-    # TODO: find config.template.toml file, parse it 
-    # and generate markdown all on the rust side then 
-    # return the string here.
-    app_config_section = shared_lib_module.find_config_template_and_generate_markdown(
-        git_repo_tag,
-        assets_path
-    )
+    try:
+        app_config_section = shared_lib_module.find_config_template_and_generate_markdown(
+            git_repo_tag,
+            assets_path
+        )
+
+        logger.info(f"Successfully generated template config markdown for '{git_repo_tag}'.")
+
+    except ValueError as error:
+        logger.error(
+            f"Skipping '{git_repo_tag}' due to error during generation! Error: {error}"
+        )
+
+        return "**(●︿●) Oh oh, this configuration page failed to generate!**\n\n" \
+            "**Please report it immediately at our [bug tracker](https://github.com/cloudy-org/wiki/issues).**"
 
     return app_config_section

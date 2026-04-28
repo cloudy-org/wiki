@@ -1,8 +1,8 @@
-use cirrus_config::v1::template::Template;
+use cirrus_config::template::Template;
 use cirrus_git_tag::{GitTag, platform::Platform};
 
 use reqwest::Url;
-use pyo3::{exceptions::PyRuntimeError, prelude::*};
+use pyo3::{exceptions::{PyRuntimeError, PyValueError}, prelude::*};
 
 // NOTE: this is all testing code, I'll need to handle 
 // errors and refactor this into something better later.
@@ -23,13 +23,39 @@ fn find_config_template_and_generate_markdown<'a>(git_repo_tag: String, assets_p
                 .join(&assets_path_string).unwrap()
                 .join("config.template.toml").unwrap();
 
-            let template_toml_config_string = reqwest::blocking::get(template_config_url)
-                .unwrap()
-                .text()
+            let template_config_response = reqwest::blocking::get(template_config_url.clone())
                 .unwrap();
 
+            let response_status = template_config_response.status();
+
+            if !response_status.is_success() {
+                return Err(
+                    // Runtime errors in our wiki plugin will fail doc builds.
+                    PyRuntimeError::new_err(
+                        format!(
+                            "GET response from '{template_config_url}' was not successful! Status Code: {response_status}",
+                        )
+                    )
+                );
+            }
+
+            let template_toml_config_string = template_config_response.text().unwrap();
+
             let mut template = Template::new(template_toml_config_string.as_str());
-            template.parse_keys().unwrap();
+
+            if let Err(error) = template.parse_keys() {
+                // TODO: use 'error' in place of 'N/A'
+
+                return Err(
+                    // Value errors in our wiki plugin will NOT fail the entire doc 
+                    // build but just configuration generation of the specific application.
+                    PyValueError::new_err(
+                        format!(
+                            "Failed to parse template config from '{template_config_url}'! Error: N/A",
+                        )
+                    )
+                );
+            };
 
             let mut markdown_source_code = String::new();
 
@@ -63,9 +89,8 @@ fn find_config_template_and_generate_markdown<'a>(git_repo_tag: String, assets_p
         },
         Err(error) => {
             Err(
-                // probably should be a different error type or a custom one
                 PyRuntimeError::new_err(
-                    format!("Failed to parse git repo tag to raw url!\n   Error: {error}")
+                    format!("Failed to parse git repo tag to raw url! Error: {error}")
                 )
             )
         },
