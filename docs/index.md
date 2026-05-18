@@ -15,7 +15,7 @@ Each project begins as something we want to develop for ourselves, whether it's 
 ## The Wiki
 This wiki is your **user guide**! This static website is where you'll be able to access all our guides and application specific documentation. It contains everything from quick-start beginner-friendly guides to in-depth manuals for power-users.
 
-The first (**#1**) cloudy-org principle in the [Cloudy Philosophy](https://github.com/cloudy-org/.github/blob/main/philosophy.md) aligns with this wiki:
+The first (**#1**) cloudy-org principle in the [Cloudy Philosophy](./philosophy.md) aligns with this wiki:
 
 > 1. **Transparency via Documentation**
 > 
