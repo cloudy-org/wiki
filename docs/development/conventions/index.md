@@ -1,4 +1,4 @@
 # Conventions
 
-- [Releases](./conventions/releases.md) - *Releasing an Application.*
-- [Authors](./conventions/authors.md) - *AUTHORS file and crediting contributors.*
+- [Releases](./releases.md) - *Releasing an Application.*
+- [Authors](./authors.md) - *AUTHORS file and crediting contributors.*

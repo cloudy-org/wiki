@@ -36,7 +36,7 @@ roseate-macos-x86_64
 roseate-win-x86_64.exe
 roseate-win-x86_64-setup.exe
 ```
-> [`roseate`](../apps/roseate/index.md) here being the name of the application.
+> [`roseate`](../../apps/roseate/index.md) here being the name of the application.
 
 For **Linux** we release a binary (`example-linux-x86_64`) that is pulled by package managers. Package managers will also handle installation of all required dependencies, we just provide the plain standalone binary. Updates are also handled via distro package managers.
 
