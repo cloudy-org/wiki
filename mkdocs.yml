@@ -60,6 +60,9 @@ extra:
     - icon: octicons/git-merge-16
       link: https://github.com/cloudy-org
 
+not_in_nav: |
+  /wip.md
+
 extra_css:
   - css/extra.css
 
