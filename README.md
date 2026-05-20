@@ -32,7 +32,7 @@ uv run mkdocs serve
 ```
 
 ## `libwiki.so`
-The application configuration page requires the Rust wiki crate to be compiled before it can generate:
+The application configuration pages requires the Rust wiki crate to be compiled before it can generate:
 
 ```sh
 # Pull cirrus toolkit
