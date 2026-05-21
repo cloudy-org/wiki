@@ -1,7 +1,11 @@
+use std::collections::HashSet;
+
+use ammonia::Builder;
 use cirrus_config::template::Template;
 use cirrus_git_tag::{GitTag, platform::Platform};
 
 use reqwest::Url;
+use pulldown_cmark::{Parser, html::push_html};
 use pyo3::{exceptions::{PyRuntimeError, PyValueError}, prelude::*};
 
 // NOTE: this is all testing code, I'll need to handle 
@@ -45,6 +49,7 @@ fn find_config_template_and_generate_markdown<'a>(git_repo_tag: String, assets_p
 
             if let Err(error) = template.parse_keys() {
                 // TODO: use 'error' in place of 'N/A'
+                // This Error enum does not implement Display trait atm
 
                 return Err(
                     // Value errors in our wiki plugin will NOT fail the entire doc 
@@ -59,16 +64,41 @@ fn find_config_template_and_generate_markdown<'a>(git_repo_tag: String, assets_p
 
             let mut markdown_source_code = String::new();
 
+            let mut added_section_headings: HashSet<String> = HashSet::new();
+
             // TODO: change 'template.keys' to be ordered
             if let Some(keys) = template.keys {
-                for (key_name, template_key) in keys {
+                for (key_path, template_key) in keys.iter().rev() {
+                    let master_key = match key_path.split_once(".") {
+                        Some((root_key, _)) => root_key.to_string(),
+                        None => key_path.clone(),
+                    };
+
+                    let master_section_heading = format!(
+                        "\n## {}\n",
+                        master_key.split("_")
+                            .map(capitalize_first_letter_of_word_map)
+                            .collect::<String>()
+                    );
+
+                    if added_section_headings.insert(master_key) {
+                        markdown_source_code.push_str(&master_section_heading);
+                    }
+
                     markdown_source_code.push_str(
-                        &format!("\n## `{}`\n", key_name)
+                        &format!(
+                            "\n### {}\n",
+                            template_key.key
+                                .split("_")
+                                .map(capitalize_first_letter_of_word_map)
+                                .collect::<String>()
+                        )
                     );
 
                     markdown_source_code.push_str(
                         &format!(
-                            "\n**Default Value:**\n\n```toml\n{}\n```\n",
+                            "\n```toml\n{} = {}\n```\n",
+                            key_path,
                             template_key.defined_toml_value
                         )
                     );
@@ -76,12 +106,23 @@ fn find_config_template_and_generate_markdown<'a>(git_repo_tag: String, assets_p
                     markdown_source_code.push_str(
                         &format!(
                             "\n**Description:**\n\n{}\n",
-                            match template_key.docstring.description.long {
-                                Some(description) => description,
+                            match &template_key.docstring.description.long {
+                                Some(description) => {
+                                    let mut parsed_description_md_html = String::new();
+
+                                    push_html(
+                                        &mut parsed_description_md_html,
+                                        Parser::new(description)
+                                    );
+
+                                    Builder::empty()
+                                        .clean(&parsed_description_md_html)
+                                        .to_string()
+                                },
                                 None => "No description.".into(),
                             }
                         )
-                    )
+                    );
                 }
             }
 
@@ -94,6 +135,19 @@ fn find_config_template_and_generate_markdown<'a>(git_repo_tag: String, assets_p
                 )
             )
         },
+    }
+}
+
+fn capitalize_first_letter_of_word_map(word: &str) -> String {
+    let mut chars = word.chars();
+
+    match chars.next() {
+        Some(first_char) => format!(
+            "{}{} ",
+            first_char.to_uppercase().to_string(),
+            chars.as_str()
+        ),
+        None => String::new(),
     }
 }
 
