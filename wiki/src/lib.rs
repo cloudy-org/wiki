@@ -66,63 +66,69 @@ fn find_config_template_and_generate_markdown<'a>(git_repo_tag: String, assets_p
 
             let mut added_section_headings: HashSet<String> = HashSet::new();
 
-            // TODO: change 'template.keys' to be ordered
-            if let Some(keys) = template.keys {
-                for (key_path, template_key) in keys.iter().rev() {
-                    let master_key = match key_path.split_once(".") {
-                        Some((root_key, _)) => root_key.to_string(),
-                        None => key_path.clone(),
-                    };
+            if let Some(template_keys) = template.keys {
 
-                    let master_section_heading = format!(
-                        "\n## {}\n",
-                        master_key.split("_")
-                            .map(capitalize_first_letter_of_word_map)
-                            .collect::<String>()
-                    );
+                for key_path in template.ordered_paths {
+                    let template_key = template_keys.get(&key_path);
 
-                    if added_section_headings.insert(master_key) {
-                        markdown_source_code.push_str(&master_section_heading);
-                    }
+                    if let Some(template_key) = template_key {
+                        let master_key = match key_path.split_once(".") {
+                            Some((root_key, _)) => root_key.to_string(),
+                            None => key_path.clone(),
+                        };
 
-                    markdown_source_code.push_str(
-                        &format!(
-                            "\n### {}\n",
-                            template_key.key
-                                .split("_")
+                        let master_section_heading = format!(
+                            "\n## {}\n",
+                            master_key.split("_")
                                 .map(capitalize_first_letter_of_word_map)
                                 .collect::<String>()
-                        )
-                    );
+                        );
 
-                    markdown_source_code.push_str(
-                        &format!(
-                            "\n```toml\n{} = {}\n```\n",
-                            key_path,
-                            template_key.defined_toml_value
-                        )
-                    );
+                        if added_section_headings.insert(master_key) {
+                            markdown_source_code.push_str(&master_section_heading);
+                        }
 
-                    markdown_source_code.push_str(
-                        &format!(
-                            "\n**Description:**\n\n{}\n",
-                            match &template_key.docstring.description.long {
-                                Some(description) => {
-                                    let mut parsed_description_md_html = String::new();
+                        markdown_source_code.push_str(
+                            &format!(
+                                "\n### {}\n",
+                                template_key.key
+                                    .split("_")
+                                    .map(capitalize_first_letter_of_word_map)
+                                    .collect::<String>()
+                            )
+                        );
 
-                                    push_html(
-                                        &mut parsed_description_md_html,
-                                        Parser::new(description)
-                                    );
+                        markdown_source_code.push_str(
+                            &format!(
+                                "\n```toml\n{} = {}\n```\n",
+                                key_path,
+                                template_key.defined_toml_value
+                            )
+                        );
 
-                                    Builder::empty()
-                                        .clean(&parsed_description_md_html)
-                                        .to_string()
-                                },
-                                None => "No description.".into(),
-                            }
-                        )
-                    );
+                        markdown_source_code.push_str(
+                            &format!(
+                                "\n**Description:**\n\n{}\n",
+                                match &template_key.docstring.description.long {
+                                    Some(description) => {
+                                        let mut parsed_description_md_html = String::new();
+
+                                        push_html(
+                                            &mut parsed_description_md_html,
+                                            Parser::new(description)
+                                        );
+
+                                        Builder::empty()
+                                            .add_tags(&["p"]) // new lines in the description when parsed to 
+                                            // markdown create new paragraphs so we need to allow the paragraph tag
+                                            .clean(&parsed_description_md_html)
+                                            .to_string()
+                                    },
+                                    None => "No description.".into(),
+                                }
+                            )
+                        );
+                    }
                 }
             }
 
