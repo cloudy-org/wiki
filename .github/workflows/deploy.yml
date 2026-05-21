@@ -13,7 +13,6 @@ jobs:
       - run: rustup update stable && rustup default stable
       - run: git submodule update --init --recursive
       - run: cargo build --release --verbose
-      - uses: actions/checkout@v4
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
