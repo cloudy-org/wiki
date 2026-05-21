@@ -3,7 +3,7 @@ name = "wiki"
 version = "0.1.0"
 description = "Cloudy-org's wiki site."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 dependencies = [
     "mkdocs==1.6.1",
     "mkdocs-material==9.7.1",
@@ -11,5 +11,12 @@ dependencies = [
     "mkdocs-section-index==0.3.10",
 ]
 
-[tool.setuptools]
-packages = []
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["plugins*"]
+
+[project.entry-points."mkdocs.plugins"]
+wiki-app-docs-gen = "plugins:AppDocsGenerator"
