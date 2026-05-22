@@ -68,6 +68,10 @@ fn find_config_template_and_generate_markdown<'a>(git_repo_tag: String, assets_p
 
             if let Some(template_keys) = template.keys {
 
+                let mut html_sanitizer = Builder::empty();
+                html_sanitizer.add_tags(&["p"]); // new lines in the description when parsed to 
+                // markdown create new paragraphs so we need to allow the paragraph tag
+
                 for key_path in template.ordered_paths {
                     let template_key = template_keys.get(&key_path);
 
@@ -110,21 +114,8 @@ fn find_config_template_and_generate_markdown<'a>(git_repo_tag: String, assets_p
                             &format!(
                                 "\n**Description:**\n\n{}\n",
                                 match &template_key.docstring.description.long {
-                                    Some(description) => {
-                                        let mut parsed_description_md_html = String::new();
-
-                                        push_html(
-                                            &mut parsed_description_md_html,
-                                            Parser::new(description)
-                                        );
-
-                                        Builder::empty()
-                                            .add_tags(&["p"]) // new lines in the description when parsed to 
-                                            // markdown create new paragraphs so we need to allow the paragraph tag
-                                            .clean(&parsed_description_md_html)
-                                            .to_string()
-                                    },
-                                    None => "No description.".into(),
+                                    Some(description) => sanitize_markdown(&html_sanitizer, description),
+                                    None => String::from("No description."),
                                 }
                             )
                         );
@@ -155,6 +146,19 @@ fn capitalize_first_letter_of_word_map(word: &str) -> String {
         ),
         None => String::new(),
     }
+}
+
+fn sanitize_markdown(html_sanitizer: &Builder, markdown_string: &String) -> String {
+    let mut parsed_markdown_html = String::new();
+
+    push_html(
+        &mut parsed_markdown_html,
+        Parser::new(markdown_string)
+    );
+
+    html_sanitizer
+        .clean(&parsed_markdown_html)
+        .to_string()
 }
 
 fn parse_git_repo_tag_to_raw_url(git_repo_tag_string: String) -> Result<String, String> {
