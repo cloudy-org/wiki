@@ -16,7 +16,8 @@ AppConfigData = typing.TypedDict(
     "AppConfigData",
     {
         "git-tag": str,
-        "assets-path": str
+        "version-tag": typing.Optional[str],
+        "config-template-path": str
     }
 )
 
@@ -32,15 +33,16 @@ class AppDocsGenerator(BasePlugin):
 
         for app_name, app_config in apps.items():
             git_tag = app_config.get("git-tag")
-            assets_path = app_config.get("assets-path")
+            version_tag = app_config.get("version-tag")
+            config_template_path = app_config.get("config-template-path")
 
-            if git_tag is None or assets_path is None:
+            if git_tag is None or config_template_path is None:
                 raise KeyError(
                     "Both 'git-tag' and 'assets-path' keys must be set for 'wiki-app-docs-gen'!"
                 )
 
             app_config_markdown_content = find_config_template_and_generate_markdown(
-                git_tag, assets_path
+                git_tag, version_tag, config_template_path
             )
 
             generated_snippets_path = docs_path.parent.joinpath("snippets", "generated")
@@ -55,7 +57,7 @@ class AppDocsGenerator(BasePlugin):
             with open(app_config_docs_markdown_path, "w") as file:
                 file.write(app_config_markdown_content)
 
-def find_config_template_and_generate_markdown(git_repo_tag: str, assets_path: str) -> str:
+def find_config_template_and_generate_markdown(git_repo_tag: str, version_tag: typing.Optional[str], assets_path: str) -> str:
     shared_object_path = Path("./target/release/libwiki.so")
 
     if not shared_object_path.exists():
@@ -74,6 +76,7 @@ def find_config_template_and_generate_markdown(git_repo_tag: str, assets_path: s
     try:
         app_config_section = shared_lib_module.find_config_template_and_generate_markdown(
             git_repo_tag,
+            version_tag,
             assets_path
         )
 

@@ -18,14 +18,13 @@ fn wiki(module: &Bound<'_, PyModule>) -> PyResult<()> {
 }
 
 #[pyfunction]
-fn find_config_template_and_generate_markdown<'a>(git_repo_tag: String, assets_path_string: String) -> PyResult<String> {
+fn find_config_template_and_generate_markdown<'a>(git_repo_tag: String, version_tag: Option<String>, config_template_path: String) -> PyResult<String> {
     // TODO: handle results
 
-    match parse_git_repo_tag_to_raw_url(git_repo_tag) {
+    match parse_git_repo_tag_to_raw_url(git_repo_tag, version_tag) {
         Ok(raw_url) => {
             let template_config_url = Url::parse(&raw_url).unwrap()
-                .join(&assets_path_string).unwrap()
-                .join("config.template.toml").unwrap();
+                .join(&config_template_path).unwrap();
 
             let template_config_response = reqwest::blocking::get(template_config_url.clone())
                 .unwrap();
@@ -161,7 +160,7 @@ fn sanitize_markdown(html_sanitizer: &Builder, markdown_string: &String) -> Stri
         .to_string()
 }
 
-fn parse_git_repo_tag_to_raw_url(git_repo_tag_string: String) -> Result<String, String> {
+fn parse_git_repo_tag_to_raw_url(git_repo_tag_string: String, version_tag: Option<String>) -> Result<String, String> {
     // TODO: switch to error struct
 
     let git_tag = GitTag::parse_string(git_repo_tag_string)
@@ -172,9 +171,13 @@ fn parse_git_repo_tag_to_raw_url(git_repo_tag_string: String) -> Result<String, 
             match git_tag.platform {
                 Platform::GitHub => Ok(
                     format!(
-                        "https://raw.githubusercontent.com/{}/{}/refs/heads/main/",
+                        "https://raw.githubusercontent.com/{}/{}/refs/{}/",
                         git_tag.owner,
-                        repo
+                        repo,
+                        match version_tag {
+                            Some(tag) => format!("/tags/{tag}"),
+                            None => String::from("/heads/main"),
+                        }
                     )
                 ),
                 _ => Err(

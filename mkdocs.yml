@@ -13,7 +13,8 @@ plugins:
       apps:
         roseate:
           git-tag: "cloudy-org/roseate @ gh"
-          assets-path: "app/assets/"
+          version-tag: "v0.1.0-alpha.22"
+          config-template-path: "app/assets/config.template.toml"
 
 markdown_extensions:
   - toc:
