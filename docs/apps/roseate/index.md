@@ -23,7 +23,10 @@ Under the **GNU GPL-3.0** license: **[https://github.com/cloudy-org/roseate](htt
 ## Index
 
 - [How to use?](./how_to_use.md) - Quick guide on how to use Roseate.
+- [Supported Formats](./supported_formats.md) - A list of supported image formats.
 - [Installation](./installation.md) - A straightforward and beginner friendly installation guide.
 - [Advanced Installations](./advanced_installs.md) - An in-depth installation guide for **advanced users**.
 
 [goldy_site]: https://devgoldy.xyz
+[image_rs_repo]: https://github.com/image-rs/image
+[zune_image_repo]: https://github.com/etemesi254/zune-image
