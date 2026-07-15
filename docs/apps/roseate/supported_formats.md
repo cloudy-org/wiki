@@ -8,9 +8,9 @@ As of **`0.1.0-alpha.24`**, Roseate supports the following formats:
 | `GIF` | ✅ | ✅ | None |
 | `WEBP` | ✅ | ✅ | None |
 | `QOI` | ✅ | ✅ | None |
-| `AVIF` | 🟡 | 🟡 | Higher bit depth images can display incorrectly or washed out and the avif format is currently only available for Linux. |
-| `BMP` | ✅ | ❌ | Not common enough to be included in the slim installation. |
-| `ICO` | ✅ | ❌ | Not common enough to be included in the slim installation. |
+| `AVIF` | 🟡 | 🟡 | The avif format is currently only available if you compile the image viewer yourself with the `native-formats` cargo feature flag. Also higher bit depth images decoded can display incorrectly or washed out. |
+| `BMP` | ✅ | ❌ | None |
+| `ICO` | ✅ | ❌ | None |
 | `TIFF` | 🟡 | ❌ | The [Image RS][image_rs_repo] decoder isn't 100% there with the tiff format, some images may fail. |
 | `JPEG-XL` | ❌ | ❌ | A [Zune Image][zune_image_repo] backend is [planned](https://github.com/cloudy-org/roseate/issues/102) and should hopefully bring support for jpeg xl. |
 
