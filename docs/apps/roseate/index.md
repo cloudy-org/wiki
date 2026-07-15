@@ -28,5 +28,3 @@ Under the **GNU GPL-3.0** license: **[https://github.com/cloudy-org/roseate](htt
 - [Advanced Installations](./advanced_installs.md) - An in-depth installation guide for **advanced users**.
 
 [goldy_site]: https://devgoldy.xyz
-[image_rs_repo]: https://github.com/image-rs/image
-[zune_image_repo]: https://github.com/etemesi254/zune-image

@@ -22,3 +22,6 @@ As of **`0.1.0-alpha.24`**, Roseate supports the following formats:
 > | Roseate Slim | Available in slim install | Only available on some platforms | Not available in slim |
 
 Those are the supported and planned to support formats as of version [**`0.1.0-alpha.24`**](https://github.com/cloudy-org/roseate/releases). Many more formats will be supported in future updates, code contributions are welcome in that area.
+
+[image_rs_repo]: https://github.com/image-rs/image
+[zune_image_repo]: https://github.com/etemesi254/zune-image
