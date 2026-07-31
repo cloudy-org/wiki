@@ -1,0 +1,2090 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="cloudy-org">
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../advanced_installs/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/clouds.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Advanced Configuration - The Cloudy Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#advanced-configuration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<div>
+    <p>⚠️ Cloudy-org is <a href="../../../wip">VERY WIP</a>! Documentation and our infrastructure is NOT finished nor ready yet for the public.</p>
+</div>
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="The Cloudy Wiki" class="md-header__button md-logo" aria-label="The Cloudy Wiki" data-md-component="logo">
+      
+  <img src="../../../assets/clouds.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The Cloudy Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Advanced Configuration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cloudy-org" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.73 5.73 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218M4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5m8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5M5 3.25a.75.75 0 1 0 0 .005z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cloudy-org
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="The Cloudy Wiki" class="md-nav__button md-logo" aria-label="The Cloudy Wiki" data-md-component="logo">
+      
+  <img src="../../../assets/clouds.png" alt="logo">
+
+    </a>
+    The Cloudy Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cloudy-org" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.73 5.73 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218M4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5m8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5M5 3.25a.75.75 0 1 0 0 .005z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cloudy-org
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../philosophy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apps
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Apps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../aeternum/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aeternum
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Aeternum
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aeternum/install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing aeternum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roseate
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Roseate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Configuration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lazy-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lazy Loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decoder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-downsampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor Downsampling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-consume-pixels-during-gpu-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experimental Consume Pixels During Gpu Upload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-dynamic-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experimental Dynamic Sampling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-multi-threaded-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experimental Multi Threaded Sampling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ui
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ui">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#show" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fullscreen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fullscreen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Magnification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Padding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zoom-into-cursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zoom Into Cursor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fit-to-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fit To Window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animate-fit-to-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Animate Fit To Window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animate-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Animate Reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-settings-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Settings Button
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-open-image-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Open Image Button
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Location
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-binds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Binds
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Binds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#show-image-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Image Info
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-extra-image-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Extra Image Info
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-viewport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reset Viewport
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-ui-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Ui Controls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Image
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Misc
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#show-detailed-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Detailed Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-ui-modes-popup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Ui Modes Popup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced_installs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Installations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_use/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to use?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supported_formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supported Image Formats
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../development/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../development/conventions/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conventions
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Conventions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../development/conventions/authors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../development/conventions/releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../misc/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Misc
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Misc
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../misc/settings_menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings Menu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lazy-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lazy Loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decoder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-downsampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor Downsampling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-consume-pixels-during-gpu-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experimental Consume Pixels During Gpu Upload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-dynamic-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experimental Dynamic Sampling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experimental-multi-threaded-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experimental Multi Threaded Sampling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ui
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ui">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#show" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fullscreen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fullscreen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magnification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Magnification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#padding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Padding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zoom-into-cursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zoom Into Cursor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fit-to-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fit To Window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animate-fit-to-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Animate Fit To Window
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animate-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Animate Reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-settings-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Settings Button
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-open-image-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Open Image Button
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Location
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-binds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Binds
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Binds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#show-image-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Image Info
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-extra-image-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Extra Image Info
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reset-viewport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reset Viewport
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-ui-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Ui Controls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Image
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Misc
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#show-detailed-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Detailed Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-ui-modes-popup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Ui Modes Popup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/cloudy-org/wiki/edit/main/docs/apps/roseate/advanced_configuration.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="advanced-configuration">Advanced Configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This section is for <strong>advanced configuration</strong>. You can configure Roseate with ease via the <strong><a href="../../../misc/settings_menu/">Settings Menu</a></strong>. </p>
+<p>Roseate is in alpha, expect sudden breaking changes in <code>config.toml</code>. </p>
+</div>
+<p>The config file for the Roseate image viewer can be accessed and edited with the <code>--edit</code> or <code>-e</code> command:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="linux" name="__tabbed_1" type="radio" /><input id="windows" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="linux">Linux</label><label for="windows">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">terminal</span><pre><span></span><code>roseate<span class="w"> </span>--edit
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">terminal</span><pre><span></span><code>start<span class="w"> </span>roseate<span class="w"> </span>--edit
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The section below is automatically generated from Roseate's toml config template which you can find here: <strong><a href="https://github.com/cloudy-org/roseate/blob/main/app/assets/config.template.toml">https://github.com/cloudy-org/roseate/blob/main/app/assets/config.template.toml</a></strong></p>
+<p>Hence to help edit this section you will need to edit the docstring in the toml template directly over at the Roseate repo.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This section is in an experimental testing stage; it's very rough around the edges. Contributions to improve my code are welcome.</p>
+</div>
+<h2 id="version">Version<a class="headerlink" href="#version" title="Permanent link">&para;</a></h2>
+<h3 id="version_1">Version<a class="headerlink" href="#version_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>No description.</p>
+<h2 id="image">Image<a class="headerlink" href="#image" title="Permanent link">&para;</a></h2>
+<h3 id="lazy-loading">Lazy Loading<a class="headerlink" href="#lazy-loading" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">image</span><span class="p">.</span><span class="n">loading</span><span class="p">.</span><span class="n">initial</span><span class="p">.</span><span class="n">lazy_loading</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Load image on separate thread during initial launch.</p>
+<p>Setting this to "true" will make the image load on a separate thread to the GUI initially. This means the GUI may load up before the image is ready to display itself. This will have an impact on peak memory hence it's "false" by default.</p>
+
+<h3 id="decoder">Decoder<a class="headerlink" href="#decoder" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">image</span><span class="p">.</span><span class="n">backend</span><span class="p">.</span><span class="n">decoder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;image-rs&quot;</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Change image decoder backend.</p>
+<p>Setting this to "zune-image" will tell roseate-core to decode images with the zune-image backend, the implementation of this backend in Roseate is experimental and WIP, but it can be faster than image-rs while also having lower memory usage.</p>
+<p>However we default to "image-rs" due to it's wider support and stability in Roseate.</p>
+<p>WARNING: "zune-image" is not implemented yet (https://github.com/cloudy-org/roseate/issues/102)!</p>
+
+<h3 id="mode">Mode<a class="headerlink" href="#mode" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">image</span><span class="p">.</span><span class="n">optimizations</span><span class="p">.</span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;balanced&quot;</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>The optimization mode controls and defines what image optimizations should be enabled or disabled.</p>
+<p>Balanced: A decent balance between low memory usage and speed (the default).</p>
+<p>Speed: You don't mind higher memory usage and just want images to load as fast as possible.</p>
+<p>Quality: You don't care about memory usage, you just want the highest quality and sharpest image possible.</p>
+
+<h3 id="monitor-downsampling">Monitor Downsampling<a class="headerlink" href="#monitor-downsampling" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">image</span><span class="p">.</span><span class="n">optimizations</span><span class="p">.</span><span class="n">monitor_downsampling</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">enabled</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="n">strength</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1.4</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Downsamples the image roughly to the resolution of your monitor.</p>
+<p>Images don't always have to be displayed at their full native resolution, especially when the image is significantly bigger than your monitor can even display, so to save GPU memory we downsample the image. Downsampling decreases the amount of GPU memory eaten up by the image at the cost of CPU time wasted actually resizing the image (depending on the decoder).</p>
+<p>The bigger the image, the more time it will take to downsample but we think the memory savings from doing so are more valuable for most users. Also some decoders have the capability of decoding a specific size of an image (thumbnail) from the get go and also image uploading may benefit from smaller images on some systems, which means CPU time is actually never wasted AT TIMES but rather significantly reduced (making image loading even faster with monitor downsampling enabled).</p>
+<p>If you do not wish for such memory savings (like those with beefy hardware) and you prefer overall faster image load times disable this optimization.</p>
+<p>If you want your image quality back when zooming into your image, you might want to also enable the "dynamic_sampling" image optimization.</p>
+
+<h3 id="experimental-consume-pixels-during-gpu-upload">Experimental Consume Pixels During Gpu Upload<a class="headerlink" href="#experimental-consume-pixels-during-gpu-upload" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">image</span><span class="p">.</span><span class="n">optimizations</span><span class="p">.</span><span class="n">experimental_consume_pixels_during_gpu_upload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Enabling this allows Roseate to upload RGBA 8 bit decoded images directly to the GPU without duplicating it's memory (zero-copy). If the image is RGBA and 8 bit depth, peak heap memory (on the CPU side) will be almost HALVED, it's very memory efficient.</p>
+<p>If your image is not in the 8 bit RGBA format, zero-copy will NOT be possible (memory will peak for a very short moment), however you will still benefit as memory for the decoded image will still be immediately freed AFTER GPU upload.</p>
+<p>This optimization is disabled if you enable "dynamic_sampling" as dynamic sampling benefits from the decoded image not being freed from memory.</p>
+
+<h3 id="experimental-dynamic-sampling">Experimental Dynamic Sampling<a class="headerlink" href="#experimental-dynamic-sampling" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">image</span><span class="p">.</span><span class="n">optimizations</span><span class="p">.</span><span class="n">experimental_dynamic_sampling</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">enabled</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="n">also_downsample</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Enabling this will enable the extremely experimental dynamic sampling feature that upsamples your image when you zoom in to bring back the detail lost from monitor downsampling when necessary.</p>
+<p>Disabled if "monitor_downsampling" is not enabled.</p>
+<p>Again, this is VERY experimental, incomplete and untested! Expect a very broken implementation and bugs.</p>
+
+<h3 id="experimental-multi-threaded-sampling">Experimental Multi Threaded Sampling<a class="headerlink" href="#experimental-multi-threaded-sampling" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">image</span><span class="p">.</span><span class="n">optimizations</span><span class="p">.</span><span class="n">experimental_multi_threaded_sampling</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>If you enable this Roseate will use it's EXPERIMENTAL fast multi-threaded function when downsampling images.</p>
+<p>If you want to limit or increase the amount of threads used for parallelisation, you may with the "threads" key. Otherwise please leave the key undefined, Roseate will consult with your operating system on how many threads it may use and it will always use two threads less than it's allowed.</p>
+<p>experimental_multi_threaded_sampling = {enabled = false, threads = 8}</p>
+<p>This is VERY experimental and can break.</p>
+
+<h2 id="ui">Ui<a class="headerlink" href="#ui" title="Permanent link">&para;</a></h2>
+<h3 id="show">Show<a class="headerlink" href="#show" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">ui</span><span class="p">.</span><span class="n">controls</span><span class="p">.</span><span class="n">show</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Show all UI controls by default.</p>
+
+<h3 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">ui</span><span class="p">.</span><span class="n">controls</span><span class="p">.</span><span class="n">settings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Show the settings button in UI controls.</p>
+
+<h3 id="fullscreen">Fullscreen<a class="headerlink" href="#fullscreen" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">ui</span><span class="p">.</span><span class="n">controls</span><span class="p">.</span><span class="n">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Show the fullscreen button in UI controls.</p>
+
+<h3 id="magnification">Magnification<a class="headerlink" href="#magnification" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">ui</span><span class="p">.</span><span class="n">controls</span><span class="p">.</span><span class="n">magnification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Show the magnification panel in UI controls.</p>
+
+<h3 id="padding">Padding<a class="headerlink" href="#padding" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">ui</span><span class="p">.</span><span class="n">viewport</span><span class="p">.</span><span class="n">padding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Adjust this value to control the spacing between the image and the edge of the window.</p>
+
+<h3 id="zoom-into-cursor">Zoom Into Cursor<a class="headerlink" href="#zoom-into-cursor" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">ui</span><span class="p">.</span><span class="n">viewport</span><span class="p">.</span><span class="n">zoom_into_cursor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Changes how image zooming behaves with the scroll wheel. Set to "false" to disable zooming into mouse cursor position.</p>
+
+<h3 id="fit-to-window">Fit To Window<a class="headerlink" href="#fit-to-window" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">ui</span><span class="p">.</span><span class="n">viewport</span><span class="p">.</span><span class="n">fit_to_window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>If set to "true", the viewport will automatically fit the image to the window.</p>
+
+<h3 id="animate-fit-to-window">Animate Fit To Window<a class="headerlink" href="#animate-fit-to-window" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">ui</span><span class="p">.</span><span class="n">viewport</span><span class="p">.</span><span class="n">animate_fit_to_window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Set to "false" if you want the image to instantly snap to the window size otherwise the viewport will perform a fancy animation while fitting the image to the window.</p>
+
+<h3 id="animate-reset">Animate Reset<a class="headerlink" href="#animate-reset" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">ui</span><span class="p">.</span><span class="n">viewport</span><span class="p">.</span><span class="n">animate_reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>If set to "true", the viewport will animate pan and zoom when they are reset.</p>
+
+<h3 id="show-settings-button">Show Settings Button<a class="headerlink" href="#show-settings-button" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">ui</span><span class="p">.</span><span class="n">home_menu</span><span class="p">.</span><span class="n">show_settings_button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>No description.</p>
+<h3 id="show-open-image-button">Show Open Image Button<a class="headerlink" href="#show-open-image-button" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">ui</span><span class="p">.</span><span class="n">home_menu</span><span class="p">.</span><span class="n">show_open_image_button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Show "Open Image" button in main menu when no image is open.</p>
+<p>If set to "true", the image selection menu will display an "Open Image" button otherwise to open an image you can click on the rose.</p>
+
+<h3 id="show-location">Show Location<a class="headerlink" href="#show-location" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">ui</span><span class="p">.</span><span class="n">image_info</span><span class="p">.</span><span class="n">show_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Show image location in image info.</p>
+<p>When enabled an offline location lookup will be performed and the image info window will display the location of which the image was taken.</p>
+<p>Otherwise if disabled no lookup will be performed and no location will be shown.</p>
+
+<h2 id="key-binds">Key Binds<a class="headerlink" href="#key-binds" title="Permanent link">&para;</a></h2>
+<h3 id="show-image-info">Show Image Info<a class="headerlink" href="#show-image-info" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">key_binds</span><span class="p">.</span><span class="n">show_image_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;I&quot;</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>No description.</p>
+<h3 id="show-extra-image-info">Show Extra Image Info<a class="headerlink" href="#show-extra-image-info" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">key_binds</span><span class="p">.</span><span class="n">show_extra_image_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;CTRL+I&quot;</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>No description.</p>
+<h3 id="reset-viewport">Reset Viewport<a class="headerlink" href="#reset-viewport" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">key_binds</span><span class="p">.</span><span class="n">reset_viewport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;R&quot;</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Key bind to reset the image pan position and zoom scale back to default.</p>
+
+<h3 id="show-ui-controls">Show Ui Controls<a class="headerlink" href="#show-ui-controls" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">key_binds</span><span class="p">.</span><span class="n">show_ui_controls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;C&quot;</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>Key bind to toggle all your UI controls like the magnification panel.</p>
+
+<h3 id="open-image">Open Image<a class="headerlink" href="#open-image" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">key_binds</span><span class="p">.</span><span class="n">open_image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;CTRL+O&quot;</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>No description.</p>
+<h2 id="misc">Misc<a class="headerlink" href="#misc" title="Permanent link">&para;</a></h2>
+<h3 id="show-detailed-errors">Show Detailed Errors<a class="headerlink" href="#show-detailed-errors" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">misc</span><span class="p">.</span><span class="n">show_detailed_errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>No description.</p>
+<h3 id="show-ui-modes-popup">Show Ui Modes Popup<a class="headerlink" href="#show-ui-modes-popup" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">misc</span><span class="p">.</span><span class="n">experimental</span><span class="p">.</span><span class="n">show_ui_modes_popup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+<p><strong>Description:</strong></p>
+<p>No description.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 - 2026 Goldy
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/cloudy-org" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.73 5.73 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218M4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5m8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5M5 3.25a.75.75 0 1 0 0 .005z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.action.edit", "search.suggest", "toc.follow", "content.code.annotation", "content.code.copy", "content.tabs.link", "content.footnote.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
